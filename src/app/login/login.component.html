@@ -1,0 +1,23 @@
+<div class="login-page">
+  <div class="form">
+    <!-- <form class="register-form">
+      <input type="text" placeholder="name"/>
+      <input type="password" placeholder="password"/>
+      <input type="text" placeholder="email address"/>
+      <button>create</button>
+      <p class="message">Already registered? <a href="#">Sign In</a></p>
+    </form> -->
+    <form class="login-form" #form="ngForm" (ngSubmit)="onLogin(form.value)">
+      <input type="text" placeholder="username" ngModel name="username" #username="ngModel" required/>
+      <div class="alert alert-danger" *ngIf="username.touched && !username.valid">
+        username is required. 
+      </div>
+      <input type="password" placeholder="password" ngModel name="password" #password="ngModel" required/>
+      <div class="alert alert-danger" *ngIf="password.touched && !password.valid">
+        password is required. 
+      </div>
+      <button>login</button>
+      <!-- <p class="message">Not registered? <a href="#">Create an account</a></p> -->
+    </form>
+  </div>
+</div>
