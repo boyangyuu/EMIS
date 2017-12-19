@@ -8,7 +8,7 @@ import { AppComponent } from './app.component';
 import { AppRoutingModule } from './app-routing.module';
 import { LoginComponent } from './login/login.component';
 import { AuthService } from './shared/auth.service';
-
+import { LayoutModule } from './layout/layout.module';
 
 @NgModule({
   declarations: [
@@ -19,7 +19,8 @@ import { AuthService } from './shared/auth.service';
     BrowserModule,
     AppRoutingModule,
     FormsModule,
-    HttpClientModule
+    HttpClientModule,
+    LayoutModule
   ],
   providers: [
     AuthService
