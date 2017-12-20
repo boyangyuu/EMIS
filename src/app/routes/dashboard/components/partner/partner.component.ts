@@ -12,17 +12,17 @@ import { Subscription } from 'rxjs/Subscription';
   <div class="col-lg-4">
     <div class="panel panel-default">
         <div class="panel-heading">
-            <i class="fa fa-folder fa-fw"></i> Partner Panel
+            <i class="fa fa-folder fa-fw"></i> Agent Panel
         </div>
         <div class="panel-body">
             <div class="list-group">
                 <div  *ngFor="let partner of partners;" class="list-group-item">
                     <i class="fa fa-user"></i> {{partner.name}}
                     <span class="pull-right">
-                        <a style="cursor: pointer; margin-right:6px">
+                        <!-- <a style="cursor: pointer; margin-right:6px">
                             <i class="fa fa-gear"></i>
-                        </a>
-                        <a style="cursor: pointer">
+                        </a> -->
+                        <a style="cursor: pointer" (click)="delPartner(partner)">
                             <i class="fa fa-trash-o"></i>
                         </a>
                     </span>
@@ -45,7 +45,6 @@ export class PartnerComponent implements OnInit {
   constructor(private partnerService: PartnerService) { }
 
   ngOnInit() {
-    this.partners = this.partnerService.getPartners();
     this.subscription = this.partnerService.partnerChanged
       .subscribe(
         (partners: Partner[]) => {
@@ -56,9 +55,12 @@ export class PartnerComponent implements OnInit {
 
   addPartner = (value) => {
     if(value == "") return;
-    let newPartner = new Partner('10', value);
-    this.partnerService.addPartner(newPartner);
+    this.partnerService.addPartner(value);
     this.partnerField.nativeElement.value = "";
+  }
+
+  delPartner = (partner: Partner) => {
+    this.partnerService.delPartner(partner);
   }
 
 }
