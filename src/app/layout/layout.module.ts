@@ -5,6 +5,7 @@ import { HeaderComponent } from './header/header.component';
 import { SidebarComponent } from './sidebar/sidebar.component';
 import { provideRoutes} from '@angular/router';
 import { AppRoutingModule } from '../app-routing.module';
+import { DropdownDirective } from '../shared/dropdown.directive';
 
 const COMPONENTS = [
     LayoutComponent,
@@ -17,6 +18,7 @@ const COMPONENTS = [
     providers: [],
     declarations: [
         ...COMPONENTS,
+        DropdownDirective
     ],
     exports: COMPONENTS
 })
