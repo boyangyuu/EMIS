@@ -37,9 +37,9 @@ export class PartnerService {
       )
   }
 
-  delPartner = (partner: Partner) => {
-    let name = partner.name;
-    this.http.delete<Partner[]>('http://127.0.0.1:3000/api/partner/' + name)
+  delPartner = (partner: any) => {
+    let id = partner._id;
+    this.http.delete<Partner[]>('http://127.0.0.1:3000/api/partner/' + id)
       .subscribe(
         data => {
           this.partners = data;

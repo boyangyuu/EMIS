@@ -6,6 +6,7 @@ import { PartnerComponent } from './dashboard/components/partner/partner.compone
 import { HttpClientModule } from '@angular/common/http';
 import { DonutChartComponent } from './dashboard/components/chart/DonutChart.component';
 import { AreaChartComponent } from './dashboard/components/chart/AreaChart.component';
+import { ProductComponent } from './dashboard/components/product/product.component';
 
 @NgModule({
   imports: [
@@ -16,7 +17,8 @@ import { AreaChartComponent } from './dashboard/components/chart/AreaChart.compo
     DashboardComponent,
     PartnerComponent,
     DonutChartComponent,
-    AreaChartComponent
+    AreaChartComponent,
+    ProductComponent
   ]
 })
 export class RoutersModule {}

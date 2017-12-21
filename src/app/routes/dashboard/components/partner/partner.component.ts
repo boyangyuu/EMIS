@@ -59,7 +59,7 @@ export class PartnerComponent implements OnInit {
     this.partnerField.nativeElement.value = "";
   }
 
-  delPartner = (partner: Partner) => {
+  delPartner = (partner: any) => {
     this.partnerService.delPartner(partner);
   }
 
