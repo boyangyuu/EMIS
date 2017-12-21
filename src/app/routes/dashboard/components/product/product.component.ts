@@ -7,7 +7,7 @@ import { ProductService } from './product.service';
 @Component({
   selector: 'app-product',
   encapsulation: ViewEncapsulation.None,
-  providers: [ProductService],
+  providers: [],
   template:`
   <div class="col-lg-4">
     <div class="panel panel-default">
@@ -61,7 +61,6 @@ export class ProductComponent implements OnInit {
   }
 
   delProduct = (product: any) => {
-      console.log(product)
     this.productService.delProduct(product);
   }
 
