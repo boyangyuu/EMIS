@@ -8,7 +8,7 @@ interface Credentials { username: string, password: string }
   selector: 'app-login',
   templateUrl: './login.component.html',
   styleUrls: ['./login.component.css'],
-  encapsulation: ViewEncapsulation.None
+  // encapsulation: ViewEncapsulation.None
 })
 export class LoginComponent implements OnInit {
   
